@@ -6,7 +6,7 @@ namespace Lab1
 {
     class Task1
     {
-        public static double EnterNumber()
+        private static double EnterNumber()
         {
             return Convert.ToDouble(Console.ReadLine());
 
