@@ -59,7 +59,6 @@ namespace Lab1
 
             x3 = 0;
             y3 = -5;
-
         }
     }
 
@@ -101,6 +100,5 @@ namespace Lab1
 
             return x >= 0 && y >= 0 && z >= 0 || x <= 0 && y <= 0 && z <= 0;
         }
-
     }
 }
