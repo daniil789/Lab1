@@ -12,55 +12,31 @@ namespace Lab1
 
         }
 
+        static double n;
+        static double m;
+        static double x;
+
         public Task1()
         {
+            string YN = string.Empty;
             string operation = string.Empty;
-
-            while (operation != "5")
-            {
-                Console.WriteLine("Выберете выражение, которое хотите вычислить: \n 1.m+--n \n 2.m++<--n \n 3.--m>n— \n 4.Arccos(x+x2) \n 5.Выбрать другое задание");
-
-                operation = Console.ReadLine();
-
-                switch (operation)
-                {
-                    case "1":
-                        N1();
-                        Console.Clear();
-                        break;
-                    case "2":
-                        N2();
-                        Console.Clear();
-                        break;
-                    case "3":
-                        N3();
-                        Console.Clear();
-                        break;
-                    case "4":
-                        N4();
-                        Console.Clear();
-                        break;
-                    case "5":
-                        return;
-                }
-            }
-
-        }
-
-        private static void N1()
-        {
-            string YN = string.Empty;
             while (YN != "N" && YN != "n")
             {
                 try
                 {
-                    Console.WriteLine("Вычисляется выражение m+--n, введите m...");
-                    var m = EnterNumber();
+                    Console.Write("m = ");
+                    m = EnterNumber();
+                    Console.Write("n = ");
+                    n = EnterNumber();
+                    Console.Write("x = ");
+                    x = EnterNumber();
+                    Console.WriteLine();
 
-                    Console.WriteLine("Вычисляется выражение m+--n, введите n...");
-                    var n = EnterNumber();
-
-                    Console.WriteLine($"m+--n = {m + --n} \n");
+                    for (int i = 1; i <= 4; i++)
+                    {
+                        Console.WriteLine(GetResult(i));
+                        Console.WriteLine();
+                    }
                 }
                 catch
                 {
@@ -69,84 +45,35 @@ namespace Lab1
 
                 Console.WriteLine("Попробовать ещё раз?(Y/N)");
                 YN = Console.ReadLine();
-
             }
         }
 
-        private static void N2()
+        public static object GetResult(int numberCase)
         {
-            string YN = string.Empty;
-            while (YN != "N" && YN != "n")
+            switch (numberCase)
             {
-                try
-                {
-                    Console.WriteLine("Вычисляется выражение m++<--n, введите m...");
-                    var m = EnterNumber();
-
-                    Console.WriteLine("Вычисляется выражение m++<--n, введите n...");
-                    var n = EnterNumber();
-
-                    Console.WriteLine($"m++<--n = {m++ < --n} \n");
-                }
-                catch
-                {
-                    Error.ShowError();
-                }
-
-                Console.WriteLine("Попробовать ещё раз?(Y/N)");
-                YN = Console.ReadLine();
-
+                case 1:
+                    Console.Write("m+--n = ");
+                    return m + --n;
+                case 2:
+                    Console.Write("m++<--n - ");
+                    return m++ < --n;
+                case 3:
+                    Console.Write("--m>n-- - ");
+                    return --m > n--;
+                case 4:
+                    Console.Write("arcos(x + x^2) = ");
+                    return N4();
+                default:
+                    return null;
             }
         }
 
-        private static void N3()
+        private static double N4()
         {
-            string YN = string.Empty;
-            while (YN != "N" && YN != "n")
-            {
-                try
-                {
-                    Console.WriteLine("Вычисляется выражение --m>n—, введите m...");
-                    var m = EnterNumber();
-
-                    Console.WriteLine("Вычисляется выражение --m>n—, введите n...");
-                    var n = EnterNumber();
-
-                    Console.WriteLine($"m++<--n = {--m > n--} \n");
-                }
-                catch
-                {
-                    Error.ShowError();
-                }
-
-                Console.WriteLine("Попробовать ещё раз?(Y/N)");
-                YN = Console.ReadLine();
-
-            }
-        }
-
-        private static void N4()
-        {
-            string YN = string.Empty;
-            while (YN != "N" && YN != "n")
-            {
-                try
-                {
-                    Console.WriteLine("Вычисляется выражение Arccos(x+x2), введите x...");
-                    var x = EnterNumber();
-
-                    Console.WriteLine($"Arccos(x+x2) = {Math.Acos(x+x*x)} \n");
-                }
-                catch
-                {
-                    Error.ShowError();
-                }
-
-                Console.WriteLine("Попробовать ещё раз?(Y/N)");
-                YN = Console.ReadLine();
-
-            }
+            return Math.Acos(x + x * x);
         }
 
     }
 }
+
