@@ -6,15 +6,14 @@ namespace Lab1
 {
     class Task1
     {
-        private static double EnterNumber()
+        private double EnterNumber()
         {
             return Convert.ToDouble(Console.ReadLine());
-
         }
 
-        static double n;
-        static double m;
-        static double x;
+        double n;
+        double m;
+        double x;
 
         public Task1()
         {
@@ -48,7 +47,7 @@ namespace Lab1
             }
         }
 
-        public static object GetResult(int numberCase)
+        private object GetResult(int numberCase)
         {
             switch (numberCase)
             {
@@ -63,17 +62,11 @@ namespace Lab1
                     return --m > n--;
                 case 4:
                     Console.Write("arcos(x + x^2) = ");
-                    return N4();
+                    return Math.Acos(x + x * x);
                 default:
                     return null;
             }
         }
-
-        private static double N4()
-        {
-            return Math.Acos(x + x * x);
-        }
-
     }
 }
 
