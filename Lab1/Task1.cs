@@ -64,7 +64,7 @@ namespace Lab1
                 }
                 catch
                 {
-                    Console.WriteLine("Введены некорректные данные.\n");
+                    Error.ShowError();
                 }
 
                 Console.WriteLine("Попробовать ещё раз?(Y/N)");
@@ -90,7 +90,7 @@ namespace Lab1
                 }
                 catch
                 {
-                    Console.WriteLine("Введены некорректные данные.\n");
+                    Error.ShowError();
                 }
 
                 Console.WriteLine("Попробовать ещё раз?(Y/N)");
@@ -116,7 +116,7 @@ namespace Lab1
                 }
                 catch
                 {
-                    Console.WriteLine("Введены некорректные данные.\n");
+                    Error.ShowError();
                 }
 
                 Console.WriteLine("Попробовать ещё раз?(Y/N)");
@@ -139,7 +139,7 @@ namespace Lab1
                 }
                 catch
                 {
-                    Console.WriteLine("Введены некорректные данные.\n");
+                    Error.ShowError();
                 }
 
                 Console.WriteLine("Попробовать ещё раз?(Y/N)");
