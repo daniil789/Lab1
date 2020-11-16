@@ -11,7 +11,10 @@ namespace Lab1
             var a = 100;
             var b = 0.001;
 
-            var result = (Math.Pow(a - b, 3) - Math.Pow(a, 3)) / (Math.Pow(-b, 3) + 3 * a * b * b - 3 * a * a * b);
+            var numerator = (float)(Math.Pow(a - b, 3) - Math.Pow(a, 3));
+            var denominator = (float)(Math.Pow(-b, 3) + 3 * a * b * b - 3 * a * a * b);
+
+            var result = numerator / denominator;
 
             Console.WriteLine($"Значение выражения = {result}");
 
